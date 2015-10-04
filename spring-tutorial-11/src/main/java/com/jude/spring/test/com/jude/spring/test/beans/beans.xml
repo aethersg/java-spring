@@ -22,7 +22,7 @@
 
     </bean>
 
-    <bean id="address" class="com.jude.spring.test.Address">
+    <bean id="address" class="com.jude.spring.test.Address" init-method="init">
         <constructor-arg name="street" value="1 church lane"/>
         <constructor-arg name="postcode" value="9876"/>
     </bean>

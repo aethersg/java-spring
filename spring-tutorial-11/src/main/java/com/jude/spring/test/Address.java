@@ -12,6 +12,10 @@ public class Address {
         this.postcode = postcode;
     }
 
+    public void init() {
+        System.out.println("Bean Created : ");
+    }
+
     @Override
     public String toString() {
         return "Address{" +
