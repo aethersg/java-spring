@@ -2,13 +2,26 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="person" class="com.jude.spring.test.Person" scope="singleton" factory-method="getInstance">
+    <bean id="person" class="com.jude.spring.test.Person" scope="singleton" factory-method="getInstance"
+          init-method="onCreate" destroy-method="onDestroy">
         <constructor-arg index="0" name="id" type="int" value="777"/>
         <constructor-arg index="1" name="name" type="java.lang.String" value="Mary"/>
         <property name="taxId" value="123"/>
         <property name="address" ref="address"/>
 
     </bean>
+    <bean id="person2" class="com.jude.spring.test.Person" scope="singleton" factory-method="createPerson"
+          factory-bean="personfactory" init-method="onCreate" destroy-method="onDestroy">
+        <constructor-arg index="0" name="id" type="int" value="654"/>
+        <constructor-arg index="1" name="name" type="java.lang.String" value="Mike"/>
+        <property name="taxId" value="123"/>
+        <property name="address" ref="address"/>
+
+    </bean>
+    <bean id="personfactory" class="com.jude.spring.test.PersonFactory">
+
+    </bean>
+
     <bean id="address" class="com.jude.spring.test.Address">
         <constructor-arg name="street" value="1 church lane"/>
         <constructor-arg name="postcode" value="9876"/>

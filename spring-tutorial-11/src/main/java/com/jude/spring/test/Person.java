@@ -19,14 +19,22 @@ public class Person {
     public Person() {
     }
 
-    public static Person getInstance(int id ,String name) {
+    public static Person getInstance(int id, String name) {
         System.out.println("creating person using factory method");
-        return new Person(id,name);
+        return new Person(id, name);
     }
 
     public Person(int id, String name) {
         this.id = id;
         this.name = name;
+    }
+
+    public void onCreate() {
+        System.out.println("Person created: " + this);
+    }
+
+    public void onDestroy() {
+        System.out.println("Person destoryed. ");
     }
 
     public void speak() {
