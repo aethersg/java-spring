@@ -33,4 +33,22 @@ public class Jungle {
         }
         return sb.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Jungle)) return false;
+
+        Jungle jungle = (Jungle) o;
+
+        return !(foods != null ? !foods.equals(jungle.foods) : jungle.foods != null) && !(animals != null ? !animals.equals(jungle.animals) : jungle.animals != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = foods != null ? foods.hashCode() : 0;
+        result = 31 * result + (animals != null ? animals.hashCode() : 0);
+        return result;
+    }
 }

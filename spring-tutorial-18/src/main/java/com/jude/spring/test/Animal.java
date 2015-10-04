@@ -30,4 +30,22 @@ public class Animal {
                 ", type='" + type + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Animal)) return false;
+
+        Animal animal = (Animal) o;
+
+        return !(getName() != null ? !getName().equals(animal.getName()) : animal.getName() != null) && !(getType() != null ? !getType().equals(animal.getType()) : animal.getType() != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getName() != null ? getName().hashCode() : 0;
+        result = 31 * result + (getType() != null ? getType().hashCode() : 0);
+        return result;
+    }
 }
