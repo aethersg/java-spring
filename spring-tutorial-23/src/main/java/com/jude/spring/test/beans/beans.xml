@@ -6,9 +6,14 @@
     <bean id="logger" class="com.jude.spring.test.Logger" >
 
     </bean>
-    <bean id="consoleWriter" class="com.jude.spring.test.ConsoleWriter" >
+    <bean id="consoleWriter" class="com.jude.spring.test.ConsoleWriter" primary="true">
 
     </bean>
+
+    <bean id="panda" class="com.jude.spring.test.ConsoleWriter" >
+
+    </bean>
+
     <bean id="fileWriter" class="com.jude.spring.test.FileWriter">
 
     </bean>
