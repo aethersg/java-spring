@@ -1,4 +1,4 @@
-package com.jude.test.spring;
+package com.jude.spring.test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
