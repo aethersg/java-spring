@@ -1,11 +1,17 @@
 package com.jude.test;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
 /**
  * Created by judetan on 4/10/15.
  */
 public class App {
     public static void main(String[] args) {
-        Person person = new Person();
+
+        ApplicationContext context = new FileSystemXmlApplicationContext("src/main/java/com/jude/test/beans/beans.xml");
+
+        Person person = (Person) context.getBean("person");
         person.speak();
     }
 }
